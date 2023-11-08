@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+// SAKIB-22201185; I include comments to make someone understand my code.
+// HAPPY CODING :)
+#define ll long long
+#define endl "\n"
+#define ull unsigned long long int
+#define fastios                   \
+    ios_base::sync_with_stdio(0); \
+    cin.tie(0);
+    int main()
+    {
+       ll int t,x,y;
+       cin>>t;
+       while(t--){
+           cin>>x>>y;
+           for(int i=x;i<=y;i++){
+               bool prime = true;
+               for(int j=2;j*j<=i;j++){
+                   if(i%j==0){
+                       prime = false;
+                       break;
+                   }
+                  
+               }
+                if(prime==true &&  i!=1)
+                   cout<<i<<endl;
+           }
+           cout<<endl;
+       }
+return 0;
+    }
