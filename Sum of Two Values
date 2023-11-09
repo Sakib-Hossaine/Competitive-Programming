@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+// SAKIB-22201185; I include comments to make someone understand my code.
+// HAPPY CODING :)
+#define ll long long
+#define endl "\n"
+#define ull unsigned long long int
+#define fastios                   \
+    ios_base::sync_with_stdio(0); \
+    cin.tie(0);
+
+
+int main() {
+   ull n, x;
+    cin >> n >> x;
+
+    vector<pair<ull , ull>> elements;
+    
+    for (int i = 1; i <= n; i++) {
+        int a;
+        cin >> a;
+        elements.push_back({a, i});
+    }
+    
+    sort(elements.begin(), elements.end());
+    
+    int left = 0, right = n - 1;
+    
+    while (left < right) {
+      ull sum = elements[left].first + elements[right].first;
+        if (sum == x) {
+            cout << elements[left].second << " " << elements[right].second << endl;
+            return 0;
+        } else if (sum < x) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    
+    cout << "IMPOSSIBLE" << endl;
+    
+    return 0;
+}
+
